@@ -19,6 +19,8 @@ This guide will typically follow a format roughly resembling the following struc
 ### model:
 short_description_and_overview - link to specs, embedded specs, highlights of camera, strengths/weaknesses, etc
 
+Typical price of device, with vendor name provided (not endorsing specific vendors, just cataloging the price mainly).  Link optional.
+
 * Feature a
   * status
 * Feature b
@@ -44,9 +46,11 @@ blah blah blah
 ```
 Description_of_alternate_config
 
-Known issues:
+Known issues / limitations:
 
 Known compatibility with:
+
+Tested firmware: 
 
 Additional information:
   
