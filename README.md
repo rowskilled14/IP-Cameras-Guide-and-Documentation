@@ -4,8 +4,7 @@ Welcome!  This repo aims to document all things IP camera related in a digestibl
 
 This guide is not officially endorsed by any other groups, parties, entities, projects, or individuals.  All advice and information provided is provided with no additional support or guarantees.  No warranties or promises of any kinds are to be inferred or interpreted from the information provided here.  
 
-In other words, don't go whining to other project leaders about advice, configs, or other information that you read about here.  This guide exists to strengthen what this community can offer, not to be a burden to anyone or any part of it.  Any issues with this project should be raised within this project.
-
+In other words, don't complain to other project leaders about advice, configs, or other information that you read about here.  This guide exists to strengthen what this community can offer, not to be a burden to anyone or any part of it.  Any issues with this project should be raised within this project.
 ___
 
 # What to expect
