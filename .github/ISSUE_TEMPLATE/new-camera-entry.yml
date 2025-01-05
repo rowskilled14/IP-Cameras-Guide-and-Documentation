@@ -53,15 +53,15 @@ body:
       placeholder: "eg. $120-140"
     validations:
       required: true
-# Price
-  - type: input
-    id: price
-    attributes: 
-      label: "Typical Price"
-      description: "List a typical price for the camera."
-      placeholder: "eg. $120-140"
-    validations:
-      required: true
+# # Price
+#   - type: input
+#     id: price
+#     attributes: 
+#       label: "Typical Price"
+#       description: "List a typical price for the camera."
+#       placeholder: "eg. $120-140"
+#     validations:
+#       required: true
 # Features
   - type: textarea
     id: features
