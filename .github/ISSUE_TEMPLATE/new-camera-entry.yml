@@ -7,7 +7,9 @@ assignees:
 body:
   - type: markdown
     attributes:
-      value: "## Thank you for contributing to this project!"
+      value: |
+        ## Thank you for contributing to this project!
+        ### Please provide as much detail as possible as you fill out this form so that the camera entry is as complete as possible.
 # Brand
   - type: input
     id: brand
