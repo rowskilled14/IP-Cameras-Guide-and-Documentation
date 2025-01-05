@@ -46,7 +46,7 @@ body:
     attributes: 
       label: "Short Description of Product:"
       description: "Please provide a short description of the product.  Keep it free of bias as much as possible, but describe the use case and make note of important/defining qualities."
-      placeholder: "eg. The Dahua Color-4k-T camera series offers a large resolution without compromising on sensor and aperture sizing.  With an 8MP, 1/1.2" sensor and F1.0 aperture, this camera offers excellent low light performance.  White lights are available on the device, but IR is not present or supported.  A little ambient white light will be required for a product like this.  With proper settings, smooth motion can still be captured without ghosting, smearing, artifacting, etc even in very low light conditions."
+      placeholder: "eg. The Dahua Color-4k-T camera series offers a large resolution without compromising on sensor and aperture sizing.  With an 8MP, 1/1.2 inch sensor and F1.0 aperture, this camera offers excellent low light performance.  White lights are available on the device, but IR is not present or supported.  A little ambient white light will be required for a product like this.  With proper settings, smooth motion can still be captured without ghosting, smearing, artifacting, etc even in very low light conditions."
     validations:
       required: false
 
