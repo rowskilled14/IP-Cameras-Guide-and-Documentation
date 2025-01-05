@@ -1,0 +1,97 @@
+name: "New Camera Entry Alt"
+description: "Add information about a new camera to this project"
+title: "[New Camera Entry]"
+labels: documentation
+assignees: 
+  - rowskilled14
+
+body:
+  - type: markdown
+  attributes:
+    value: "## Thank you for contributing to this project!"
+    value: "| "
+      "Please fill out as much of this as you can to help this project remain as complete as it is."
+
+# Brand
+  - type: input
+    id: brand
+    attributes: 
+      label: "Brand of Device:"
+      # description: "What brand is your device?  
+      placeholder: "eg. Dahua, Hikvision, Axis, Uniview, Reolink, etc"
+    validations:
+      required: true
+
+# Category
+  - type: input
+    id: category
+    attributes: 
+      label: "Category of Device:"
+      # description:
+      placeholder: "eg. PoE; Wi-Fi; BNC; etc"
+    validations:
+      required: true
+
+# Model
+  - type: input
+    id: model
+    attributes: 
+      label: "Model of Device:"
+      # description:
+      placeholder: "eg. IPC-HDW5442TM-ASE-S3, IPC-HDW5849H-ASE-LED, etc"
+    validations:
+      required: true
+
+# Description
+  - type: textarea
+    id: description
+    attributes: 
+      label: "Short Description of Product:"
+      description: "Please provide a short description of the product.  Keep it free of bias as much as possible, but describe the use case and make note of important/defining qualities."
+      placeholder: "eg. The Dahua Color-4k-T camera series offers a large resolution without compromising on sensor and aperture sizing.  With an 8MP, 1/1.2" sensor and F1.0 aperture, this camera offers excellent low light performance.  White lights are available on the device, but IR is not present or supported.  A little ambient white light will be required for a product like this.  With proper settings, smooth motion can still be captured without ghosting, smearing, artifacting, etc even in very low light conditions."
+    validations:
+      required: false
+
+# Price
+  - type: input
+    id: price
+    attributes: 
+      label: "Typical Price"
+      description: "List a typical price for the camera."
+      placeholder: "eg. $120-140"
+    validations:
+      required: true
+
+
+# Price
+  - type: input
+    id: price
+    attributes: 
+      label: "Typical Price"
+      description: "List a typical price for the camera."
+      placeholder: "eg. $120-140"
+    validations:
+      required: true
+
+
+# Features
+  - type: textarea
+    id: features
+    attributes: 
+      label: "Features"
+      description: "Make a bulleted list of features.  Start each line with an asterisk: `*` and put one feature per bullet point / line.  Be as comprehensive as possible, listing all features you can."
+      placeholder: "eg. ONVIF Compliant 2 way audio; White LED lights; IR LED Lights; Variable Zoom; PTZ; AI Detection features; - But more detail each"
+    validations:
+      required: true
+
+
+# Camera Stream Endpoints/URLs
+# Example Config
+  # For go2rtc, Frigate, and possibly others
+# Description of config
+# Alternate config and description
+# Known issues / limitations
+# Known compatibility with tools: 
+  # Specific environment information of each
+# Tested firmware
+# Additional Information
