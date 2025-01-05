@@ -68,7 +68,14 @@ body:
     attributes: 
       label: "Features"
       description: "Make a bulleted list of features.  Start each line with an asterisk: `*` and put one feature per bullet point / line.  Be as comprehensive as possible, listing all features you can."
-      placeholder: "eg. ONVIF Compliant 2 way audio; White LED lights; IR LED Lights; Variable Zoom; PTZ; AI Detection features; - But more detail each"
+      placeholder: |
+      * ONVIF Compliant 2 way audio
+      * White LED lights 
+      * IR LED Lights 
+      * Variable Zoom
+      * PTZ
+      * AI Detection features
+      * As much detail as possible per each"
     validations:
       required: true
 # Camera Stream Endpoints/URLs
