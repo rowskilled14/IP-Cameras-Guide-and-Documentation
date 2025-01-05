@@ -9,8 +9,6 @@ body:
   - type: markdown
     attributes:
     value: "## Thank you for contributing to this project!"
-    value: "| "
-      "Please fill out as much of this as you can to help this project remain as complete as it is."
 
 # Brand
   - type: input
