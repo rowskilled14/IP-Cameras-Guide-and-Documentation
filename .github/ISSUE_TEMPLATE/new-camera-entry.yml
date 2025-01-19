@@ -1,7 +1,7 @@
 name: "New Camera Entry Alt"
 description: "Add information about a new camera to this project"
 title: "[New Camera Entry]"
-labels: "[Documentation], [New Camera]"
+labels: ["Documentation", "New Camera"]
 assignees: 
   - rowskilled14
 body:
