@@ -48,7 +48,7 @@ jobs:
         uses: peter-evans/create-or-update-comment@v4
         with:
           issue-number: ${{ github.event.issue.number }}
-          comment-id: ${{ steps.find-comment.outputs.comment_id }}
+          comment-id: ${{ steps.find-comment.outputs.comment-id }}
           body: |
             **Bot Reply:** This comment serves to post the plaintext of the initial post.
             ```
