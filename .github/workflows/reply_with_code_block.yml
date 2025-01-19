@@ -34,7 +34,7 @@ jobs:
         uses: peter-evans/find-comment@v3
         with:
           issue-number: ${{ github.event.issue.number }}
-          # body-includes: "This comment serves to post the plaintext of the initial post."
+          body-includes: "This comment serves to post the plaintext of the initial post."
           comment-author: 'github-actions[bot]'  # Specify the author as the GitHub Actions bot
 
       - name: Debug - Output comment ID
