@@ -39,12 +39,12 @@ jobs:
 
       - name: Debug - Output comment ID
         run: |
-          echo "Comment ID found: ${{ steps.find-comment.outputs.comment_id }}"
+          echo "Comment ID found: ${{ steps.find-comment.outputs.comment-id }}"
           echo "Issue number: ${{ github.event.issue.number }}"
           
 
       - name: Edit the bot's initial comment
-        if: steps.find-comment.outputs.comment_id != ''
+        if: steps.find-comment.outputs.comment-id != ''
         uses: peter-evans/create-or-update-comment@v4
         with:
           issue-number: ${{ github.event.issue.number }}
@@ -56,7 +56,7 @@ jobs:
             ```
 
       - name: Fail if the comment is not found
-        if: steps.find-comment.outputs.comment_id == ''
+        if: steps.find-comment.outputs.comment-id == ''
         run: |
           echo "The bot's comment was not found. No action will be taken."
           exit 1
