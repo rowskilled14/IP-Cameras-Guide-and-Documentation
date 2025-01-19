@@ -81,12 +81,152 @@ body:
     validations:
       required: true
 # Camera Stream Endpoints/URLs
+  - type: textarea
+    id: endpoints
+    attributes: 
+      label: "Known Camera Stream API Endpoints/URIs"
+      description: "Make a bulleted list of all endpoints.  Start each line with an asterisk: `*` and put one feature per bullet point / line.  Be as comprehensive as possible, listing all endpoints you can.  Use a standard format, putting placeholders for user customized parts of the URI.  Add notes whenever necessary."
+      placeholder: |
+        * rtsp://{username}:{password}@{ip_address}:554/cam/realmonitor?channel=1&subtype=0
+        * rtsp://{username}:{password}@{ip_address}:554/cam/realmonitor?channel=1&subtype=2
+          * Port can be customized in options but will always default to 554
+    validations:
+      required: true
 # Example Config
-  # For go2rtc, Frigate, and possibly others
+  - type: textarea
+    id: config
+    attributes: 
+      label: "Example config - primarily targeting go2rtc and Frigate"
+      description: "Add the config used in your NVR setup, preferably Frigate and/or go2rtc.  Include anything relevant to the camera, but omit irrelevant NVR information."
+      placeholder: |
+        Go2rtc Example:
+          streams: 
+            cam1:
+              - rtsp://{username}:{password}@{ip_address}:554/cam/realmonitor?channel=1&subtype=0
+              - ffmpeg:cam1#audio=opus#audio=copy
+        Frigate Example:
+          streams: 
+            cam1:
+              - rtsp://{username}:{password}@{ip_address}:554/cam/realmonitor?channel=1&subtype=0
+              - ffmpeg:cam1#audio=opus#audio=copy
+          cameras:
+            Livingroom:
+              ffmpeg:
+                inputs:
+                  - path: rtsp://127.0.0.1:8554/cam1
+                    roles:
+                      - record
+                      - detect
+              record:
+                enabled: true
+              live:
+                stream_name: cam1
+              objects:
+                track:
+                  - person
+                  - cat
+                  - bird
+                  - dog
+              motion:
+                mask: coods
+    validations:
+      required: true
 # Description of config
+  - type: textarea
+    id: config_description
+    attributes: 
+      label: "Config description"
+      description: "Add a description for the above configuration.  Apply any necessary information."
+      placeholder: "The above description shows this camera being used in Frigate.  It should be noted that ..."
+    validations:
+      required: false
 # Alternate config and description
+  - type: textarea
+    id: altconfig
+    attributes: 
+      label: "Alternate Example config - primarily targeting go2rtc and Frigate"
+      description: "Alternate config to above.  If multiple configs are relevant, add second config details here.  Add the config used in your NVR setup, preferably Frigate and/or go2rtc.  Include anything relevant to the camera, but omit irrelevant NVR information."
+      placeholder: |
+        Go2rtc Example:
+          streams: 
+            cam1:
+              - rtsp://{username}:{password}@{ip_address}:554/cam/realmonitor?channel=1&subtype=0
+              - ffmpeg:cam1#audio=opus#audio=copy
+        Frigate Example:
+          streams: 
+            cam1:
+              - rtsp://{username}:{password}@{ip_address}:554/cam/realmonitor?channel=1&subtype=0
+              - ffmpeg:cam1#audio=opus#audio=copy
+          cameras:
+            Livingroom:
+              ffmpeg:
+                inputs:
+                  - path: rtsp://127.0.0.1:8554/cam1
+                    roles:
+                      - record
+                      - detect
+              record:
+                enabled: true
+              live:
+                stream_name: cam1
+              objects:
+                track:
+                  - person
+                  - cat
+                  - bird
+                  - dog
+              motion:
+                mask: coods
+    validations:
+      required: false
+# Description of alternate config
+  - type: textarea
+    id: altconfig_description
+    attributes: 
+      label: "Alternate Config description"
+      description: "Add a description for the above configuration.  Apply any necessary information."
+      placeholder: "The above description shows this camera being used in Frigate.  It should be noted that ..."
+    validations:
+      required: false
 # Known issues / limitations
+- type: textarea
+    id: known_issues
+    attributes: 
+      label: "Known issues / limitations"
+      description: "Describe any known limitations, shortcomings, problems, or issues with the camera here.  Add issues even if they were mentioned in a prior field.  Include workarounds if applicable."
+      placeholder: "It is a known issue that this camera cannot support the X feature on firmware versions...  ...A workaround exists via...  ...The camera isn't compatible with..."
+    validations:
+      required: false
 # Known compatibility with tools: 
-  # Specific environment information of each
+- type: textarea
+    id: known_compatibility
+    attributes: 
+      label: "Known Compatibility with"
+      description: "Make a bulleted list of any tools, projects, applications, etc that you know the camera is compatible with.  Start each line with an asterisk: `*` and put one feature per bullet point / line.  Be as comprehensive as possible, listing all entities you can.  Add notes whenever necessary."
+      placeholder: |
+        * Frigate
+        * go2rtc
+        * Shinobi
+    validations:
+      required: false
 # Tested firmware
+- type: textarea
+    id: firmware
+    attributes: 
+      label: "Tested firmware version(s)"
+      description: "Make a bulleted list of firmwares tested for this camera.  Start each line with an asterisk: `*` and put one feature per bullet point / line.  Be as comprehensive as possible, listing all entities you can.  Add notes whenever necessary."
+      placeholder: |
+        * 1.0.2
+        * 2.0.1
+        * 1.2.3
+    validations:
+      required: true
 # Additional Information
+- type: textarea
+    id: additional_info
+    attributes: 
+      label: "Additional Information / Notes"
+      description: "Add any additional information which you would like to contribute, but which doesn't fit above here."
+      placeholder: "Anything you'd like, within reason and relevance."
+    validations:
+      required: false
