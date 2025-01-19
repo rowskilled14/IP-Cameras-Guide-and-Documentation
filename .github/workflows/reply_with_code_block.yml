@@ -32,7 +32,7 @@ jobs:
         with:
           issue-number: ${{ github.event.issue.number }}
           body-includes: '**Bot Reply:** This comment serves to post the plaintext of the initial post.'  # Match the comment body
-          comment-author: 'github-actions[bot]'  # Specify the author
+          comment-author: 'github-actions'  # Specify the author
       - name: Edit the initial comment
         if: steps.find-comment.outputs.comment_id != ''
         uses: peter-evans/create-or-update-comment@v2
