@@ -23,17 +23,25 @@ jobs:
             ```
 
   reply-edited:
-    if: github.event.action == 'edited' && (contains(github.event.issue.labels.*.name, 'New Camera') || contains(github.event.issue.labels.*.name, 'Update Existing Camera'))
+    if: github.event.action == 'opened' && (contains(github.event.issue.labels.*.name, 'New Camera') || contains(github.event.issue.labels.*.name, 'Update Existing Camera'))
     runs-on: ubuntu-latest
     steps:
-      - name: Find initial comment
+      - name: Debug - Check if job is triggered
+        run: echo "The reply-edited job is triggered."
+
+      - name: Find the initial comment
         id: find-comment
         uses: peter-evans/find-comment@v1
         with:
           issue-number: ${{ github.event.issue.number }}
-          body-includes: '**Bot Reply:** This comment serves to post the plaintext of the initial post.'  # Match the comment body
-          comment-author: 'github-actions'  # Specify the author
-      - name: Edit the initial comment
+          body-includes: "** Bot Reply:** This comment serves to post the plaintext of the initial post."
+          comment-author: 'github-actions'  # Specify the author as the GitHub Actions bot
+
+      - name: Debug - Output comment ID
+        run: |
+          echo "Comment ID found: ${{ steps.find-comment.outputs.comment_id }}"
+
+      - name: Edit the bot's initial comment
         if: steps.find-comment.outputs.comment_id != ''
         uses: peter-evans/create-or-update-comment@v2
         with:
@@ -44,3 +52,9 @@ jobs:
             ```
             ${{ github.event.issue.body }}
             ```
+
+      - name: Fail if the comment is not found
+        if: steps.find-comment.outputs.comment_id == ''
+        run: |
+          echo "The bot's comment was not found. No action will be taken."
+          exit 1
