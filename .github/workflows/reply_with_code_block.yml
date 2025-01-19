@@ -31,8 +31,8 @@ jobs:
         uses: peter-evans/find-comment@v1
         with:
           issue-number: ${{ github.event.issue.number }}
-          body: '**Bot Reply:** This comment serves to post the plaintext of the initial post.'  # Match the comment body
-          author: 'github-actions[bot]'  # Specify the author
+          body-includes: '**Bot Reply:** This comment serves to post the plaintext of the initial post.'  # Match the comment body
+          comment-author: 'github-actions[bot]'  # Specify the author
       - name: Edit the initial comment
         if: steps.find-comment.outputs.comment_id != ''
         uses: peter-evans/create-or-update-comment@v2
