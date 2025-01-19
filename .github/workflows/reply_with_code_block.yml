@@ -18,9 +18,9 @@ jobs:
           issue-number: ${{ github.event.issue.number }}
           body: |
             ** Bot Reply:** This comment serves to post the plaintext of the initial post.
-            \`\`\`
+            ```
             ${{ github.event.issue.body }}
-            \`\`\`
+            ```
 
   reply-edited:
     if: contains(github.event.issue.labels.*.name, 'New Camera') || contains(github.event.issue.labels.*.name, 'Update Existing Camera')
@@ -42,6 +42,6 @@ jobs:
           comment-id: ${{ steps.get-comment.outputs.bot_comment_id }}
           body: |
             ** Bot Reply:** This comment serves to post the plaintext of the initial post.
-            \`\`\`
+            ```
             ${{ github.event.issue.body }}
-            \`\`\`
+            ```
