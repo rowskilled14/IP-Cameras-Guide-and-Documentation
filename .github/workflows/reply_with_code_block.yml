@@ -26,22 +26,21 @@ jobs:
     if: contains(github.event.issue.labels.*.name, 'New Camera') || contains(github.event.issue.labels.*.name, 'Update Existing Camera')
     runs-on: ubuntu-latest
     steps:
-      - name: Get the bot's initial comment
-        id: get-comment
-        run: |
-          comments=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
-            -H "Accept: application/vnd.github.v3+json" \
-            https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.issue.number }}/comments)
-          echo "::set-output name=bot_comment_id::$(echo "$comments" | jq -r '.[] | select(.body | contains("** Bot Reply:** This comment serves to post the plaintext of the initial post.")) | .id')"
-          
-      - name: Edit the bot's initial comment
-        if: steps.get-comment.outputs.bot_comment_id != ''
+      - name: Find initial comment
+        id: find-comment
+        uses: peter-evans/find-comment@v1
+        with:
+          issue-number: ${{ github.event.issue.number }}
+          body: '**Bot Reply:** This comment serves to post the plaintext of the initial post.'  # Match the comment body
+          author: 'github-actions'  # Specify the author
+      - name: Edit the initial comment
+        if: steps.find-comment.outputs.comment_id != ''
         uses: peter-evans/create-or-update-comment@v2
         with:
           issue-number: ${{ github.event.issue.number }}
-          comment-id: ${{ steps.get-comment.outputs.bot_comment_id }}
+          comment-id: ${{ steps.find-comment.outputs.comment_id }}
           body: |
-            ** Bot Reply:** This comment serves to post the plaintext of the initial post.
+            **Bot Reply:** This comment serves to post the plaintext of the initial post.
             ```
             ${{ github.event.issue.body }}
             ```
