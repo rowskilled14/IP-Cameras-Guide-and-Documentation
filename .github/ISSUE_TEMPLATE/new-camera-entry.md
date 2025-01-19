@@ -2,7 +2,7 @@
 name: New Camera Entry
 about: Suggest an idea for this project
 title: "[New Camera Entry]"
-labels: documentation
+labels: "[Documentation], [New Camera]"
 assignees: rowskilled14
 
 ---
