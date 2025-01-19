@@ -35,7 +35,7 @@ jobs:
         with:
           issue-number: ${{ github.event.issue.number }}
           # body-includes: "This comment serves to post the plaintext of the initial post."
-          comment-author: 'github-actions'  # Specify the author as the GitHub Actions bot
+          comment-author: 'github-actions[bot]'  # Specify the author as the GitHub Actions bot
 
       - name: Debug - Output comment ID
         run: |
